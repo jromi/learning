@@ -1,7 +1,5 @@
 package jerimy.test.app1;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -23,20 +21,17 @@ public class FibonacciTest {
         // use another iterator loop that prints out the values like below but using the array
         int[] myNumbers = new int[10];
         
-        for (int fill=0; fill<myNumbers.length; fill++){        
-            int filler = fill+1;  // no zero
-            myNumbers[fill] = f.fibonacciNumber(filler);
-            System.out.println("value: " + myNumbers[fill] + " is located at array position: " + fill);
+        for (int fill=1; fill <= myNumbers.length; fill++){                    
+            myNumbers[fill-1] = f.fibonacciNumber(fill);
+            System.out.println("value: " + myNumbers[fill-1] + " is located at array position: " + (fill-1));
         }
-        
-        for(int i=1;i < 10;i++) {            
-            System.out.println(i + " " + f.fibonacciNumber(i));
-        }
-       
-        List<Integer> myList = new ArrayList<>();
-        for (int fill=0; fill<10; fill++){
-            int filler2 = fill +1;
-            myList.add(f.fibonacciNumber(filler2));
+               
+        System.out.println("Use sequence to output a list...");
+        List<Integer> sequence = f.getFibonacciSequence(10);
+        int i=1;
+        for(Integer x : sequence) {
+            System.out.println(i + " " + x);
+            i++;
         }
         
     }

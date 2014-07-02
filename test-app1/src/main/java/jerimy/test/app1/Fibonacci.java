@@ -1,5 +1,8 @@
 package jerimy.test.app1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author theider
@@ -31,5 +34,14 @@ public class Fibonacci {
             return fibonacciNumber(n-1) + fibonacciNumber(n-2);
         }
     }
+    
+    public List<Integer> getFibonacciSequence(int count) {
+        List<Integer> myList = new ArrayList<>();
+        for (int fill=0; fill < count; fill++){            
+            myList.add(fibonacciNumber(fill + 1));
+        }        
+        return myList;
+    }
+    
     
 }
