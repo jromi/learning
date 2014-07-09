@@ -44,9 +44,11 @@ public class HashMapFun {
             myMap.put(list1.getName(), list1);
         }
         String person = "Tim";
+        String person2 = "Marissa";
         System.out.println(myMap.values());
         System.out.println(myMap);
         System.out.println(person + "'s color is: " + myMap.get(person).getColor());
+        System.out.println(person2 + "'s color is: " + myMap.get(person2).getColor());
         //System.out.println(people[0]);
     }
     
