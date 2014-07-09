@@ -1,6 +1,7 @@
 package jerimy.test.app2;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -20,17 +21,32 @@ public class HashMapFun {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        PeopleColor o1 = new PeopleColor("bob","black");
-        PeopleColor o2 = new PeopleColor("joe","blue");
-        if(o1.equals(o2)) {
-            
-        }
+        
         List<PeopleColor> list = new ArrayList<>();
-        list.add(o1);
-        if(list.contains(o1)) {
+        for (int i=0; i<people.length; i++) {
             
+            list.add(new PeopleColor(people[i], colors[i]));
+            System.out.println(list.get(i));
         }
         
+        for (PeopleColor list1 : list) {
+            if ("Tim".equals(list1.getName())) {
+                System.out.println("Tim's Color is: " + list1.getColor());
+            }
+            
+            if ("Marissa".equals(list1.getName())) {
+                System.out.println("Marrisa's Color is: " + list1.getColor());
+            }
+        }
+        HashMap<String, PeopleColor> myMap = new HashMap<>();
+        
+        for (PeopleColor list1 : list) {
+            myMap.put(list1.getName(), list1);
+        }
+        String person = "Tim";
+        System.out.println(myMap.values());
+        System.out.println(myMap);
+        System.out.println(person + "'s color is: " + myMap.get(person).getColor());
         //System.out.println(people[0]);
     }
     
